@@ -9,7 +9,7 @@ import { getDbStatus } from "./config/db";
 
 const app = express();
 
-// Trust proxy for edge and load balancer deployments (Vercel/Render/Railway)
+// Trust proxy for edge and load balancer deployments (Render/Railway)
 app.set("trust proxy", 1);
 
 // Security Headers
