@@ -10,7 +10,7 @@
 
 ```mermaid
 flowchart TD
-    subgraph ClientLayer ["1. Presentation Layer (Next.js 15 App Router)"]
+    subgraph ClientLayer ["1. Presentation Layer (Next.js 16 App Router)"]
         direction TB
         Mascot["🐶 Animated Toby Mascot (Visual Emotion Feedback)"]
         VoiceIO["🎙️ Dual Voice/Text Engine (Web Speech STT & TTS)"]

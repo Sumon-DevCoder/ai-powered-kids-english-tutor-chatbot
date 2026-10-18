@@ -40,7 +40,7 @@
 
 ```mermaid
 flowchart TD
-    subgraph Client ["Client Layer (Next.js 15 + Tailwind CSS)"]
+    subgraph Client ["Client Layer (Next.js 16 + Tailwind CSS)"]
         UI["Tactile Kid UI (cursor-pointer)"]
         Mascot["Animated SVG Mascot (Toby the Bear)"]
         STT["Web Speech Recognition (STT)"]
@@ -85,7 +85,7 @@ flowchart TD
 
 ---
 
-## 🎯 Assessment Feature Breakdown
+## 🎯 Core Features & System Capabilities
 
 ### 1. Progressive Learning System (L1, L2, L3)
 - **Level 1 (L1 - Ages 3-4)**: Focuses on single-word vocabulary, phonics sound imitation (e.g. `"/æ/ /æ/ Apple!"`), colors, animals, and objects. Replies strictly capped at 4–6 words.
