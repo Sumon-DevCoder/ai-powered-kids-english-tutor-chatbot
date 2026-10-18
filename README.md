@@ -29,6 +29,13 @@
 └───────────────────────┴─────────────────────────────┴───────────────────────┘
 ```
 
+### 📚 Project Documentation Hub
+- 🏗️ **[Detailed Architecture Specification](docs/ARCHITECTURE.md)**: Layered architectural diagrams, end-to-end data flows, and subsystem breakdown.
+- 📐 **[System Design Document](docs/SYSTEM_DESIGN.md)**: HLD/LLD, Child Mode state machine, CASEL SEL matrix, and latency budget breakdown.
+- 🚀 **[Local Setup & Running Instructions](#-local-setup--running-instructions)**: How to run, test, and verify the project locally.
+- 🌐 **[Production Deployment Guide](#-production-deployment-guide)**: Live production deployment instructions for Vercel and Render.
+- 🎬 **[2-Minute Video Presentation Script](#-2-minute-english-video-presentation-script)**: Complete English presentation script for BRIMSEL evaluators.
+
 ---
 
 ## 🏗️ System Architecture Diagram

@@ -1,8 +1,8 @@
 # ==========================================
-# Documentation & Assessment Notes (Internal Only)
+# Internal Assessment Notes
 # ==========================================
-docs/
-docs/**
+docs/assessment-spec.md
+docs/codebase-audit.md
 
 # ==========================================
 # Dependencies
