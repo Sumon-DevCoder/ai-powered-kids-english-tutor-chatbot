@@ -51,25 +51,29 @@ export default function KidsTutorPage() {
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Load Initial Demo Profiles
+  // Load Initial Profiles from Live Backend
   useEffect(() => {
     async function loadData() {
-      const data = await fetchProfiles();
-      if (data && data.length > 0) {
-        setProfiles(data);
-        const defaultProfile = data[0];
-        setActiveProfile(defaultProfile);
-        // Welcome message tailored to default profile
-        setMessages([
-          {
-            id: "welcome_msg",
-            sender: "tutor",
-            text: `Hi ${defaultProfile.name}! 🐻 I am Toby! Are you ready to play and learn English today? ⭐`,
-            mode: "learning",
-            latencyMs: 12,
-            timestamp: new Date().toISOString(),
-          },
-        ]);
+      try {
+        const data = await fetchProfiles();
+        if (data && data.length > 0) {
+          setProfiles(data);
+          const defaultProfile = data[0];
+          setActiveProfile(defaultProfile);
+          // Welcome message tailored to default profile
+          setMessages([
+            {
+              id: "welcome_msg",
+              sender: "tutor",
+              text: `Hi ${defaultProfile.name}! 🐻 I am Toby! Are you ready to play and learn English today? ⭐`,
+              mode: "learning",
+              latencyMs: 12,
+              timestamp: new Date().toISOString(),
+            },
+          ]);
+        }
+      } catch (err) {
+        console.error("Error loading profiles from backend:", err);
       }
     }
     loadData();

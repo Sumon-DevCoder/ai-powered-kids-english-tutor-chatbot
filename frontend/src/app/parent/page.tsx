@@ -25,9 +25,14 @@ export default function ParentDashboardPage() {
 
   useEffect(() => {
     async function load() {
-      const data = await fetchAnalyticsMetrics();
-      setMetrics(data);
-      setIsLoading(false);
+      try {
+        const data = await fetchAnalyticsMetrics();
+        setMetrics(data);
+      } catch (err) {
+        console.error("Failed to load metrics:", err);
+      } finally {
+        setIsLoading(false);
+      }
     }
     load();
   }, []);
