@@ -55,7 +55,7 @@ export default function ParentDashboardPage() {
               <span>&lt; 2.0s SLA Active & Verified</span>
             </Badge>
             <Badge variant="primary" size="lg">
-              Evaluator / Parent Portal
+              Parent & Analytics Portal
             </Badge>
           </div>
         </div>
@@ -276,7 +276,7 @@ export default function ParentDashboardPage() {
 
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
               <span className="text-xs font-bold text-slate-500">
-                Evaluator Live Test:
+                Interactive Demo:
               </span>
               <Link href="/">
                 <Button variant="primary" size="sm" className="font-bold">

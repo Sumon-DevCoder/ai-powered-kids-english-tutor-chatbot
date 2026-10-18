@@ -453,7 +453,7 @@ export default function KidsTutorPage() {
 
       {/* Footer */}
       <footer className="text-center py-3 text-xs text-slate-500 font-semibold border-t border-slate-200 bg-white">
-        Built for BRIMSEL Assessment by Senior Full-Stack AI Engineer • AI Kids English Tutor (&lt; 7 Years)
+        Built with ❤️ by Mustafizur Rahman Sumon • AI-Powered Kids English Tutor (&lt; 7 Years)
       </footer>
 
       {/* SEL Milestone Modal Celebration */}

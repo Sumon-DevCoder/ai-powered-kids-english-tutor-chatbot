@@ -1,7 +1,6 @@
 # 📐 System Design Document: Toby AI
 
-> **System**: AI-Powered Kids English Tutor Chatbot (< 7 Years Old)  
-> **Evaluation**: BRIMSEL Assessment  
+> **Author**: Mustafizur Rahman Sumon (Full-Stack AI Engineer)  
 > **Status**: Production-Ready & Tested (Vitest 6/6 Passing)  
 
 ---

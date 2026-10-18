@@ -1,7 +1,7 @@
 # 🏗️ Architecture Specification: Toby AI
 
 > **System**: AI-Powered Kids English Tutor Chatbot (< 7 Years Old)  
-> **Evaluation**: BRIMSEL Assessment  
+> **Author**: Mustafizur Rahman Sumon (Full-Stack AI Engineer)  
 > **Target SLA**: Sub-2.0s Latency Guaranteed  
 
 ---
@@ -16,7 +16,7 @@ flowchart TD
         VoiceIO["🎙️ Dual Voice/Text Engine (Web Speech STT & TTS)"]
         Profiles["👤 1-Click Multi-Child Switcher (Leo, Sam, Maya)"]
         SELBadges["🎉 Confetti & Milestone Badges (CASEL SEL)"]
-        ParentPortal["📊 Real-time Evaluator & Parent Telemetry Portal"]
+        ParentPortal["📊 Real-time Parent & Analytics Telemetry Portal"]
     end
 
     subgraph GatewayLayer ["2. API Gateway & Real-time Layer (Express + Socket.io)"]

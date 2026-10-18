@@ -1,8 +1,7 @@
 # 🐻 Toby AI: AI-Powered English Learning Chatbot for Children (Under 7 Years Old)
 
-> **Assessment Submission for BRIMSEL**  
-> **Lead Evaluator**: Farzana Rahman (Senior AI Engineer)  
-> **Target Collaborators**: `farzana@sharif.com`, `mashrur@sharif.com`  
+> **Author**: Mustafizur Rahman Sumon (Full-Stack AI Engineer)  
+> **Project Type**: Production-Grade AI EdTech System  
 > **Sub-2s Latency SLA**: **100% Passed (Avg ~460ms measured)**  
 > **Target Audience**: Early learners aged 3 to 7 years old  
 
@@ -34,7 +33,6 @@
 - 📐 **[System Design Document](docs/SYSTEM_DESIGN.md)**: HLD/LLD, Child Mode state machine, CASEL SEL matrix, and latency budget breakdown.
 - 🚀 **[Local Setup & Running Instructions](#-local-setup--running-instructions)**: How to run, test, and verify the project locally.
 - 🌐 **[Production Deployment Guide](#-production-deployment-guide)**: Live production deployment instructions for Vercel and Render.
-- 🎬 **[2-Minute Video Presentation Script](#-2-minute-english-video-presentation-script)**: Complete English presentation script for BRIMSEL evaluators.
 
 ---
 
@@ -113,7 +111,7 @@ Aligned with early childhood CASEL competencies:
   - **Leo**: Age 4, Level 1 (Beginner)
   - **Sam**: Age 5, Level 2 (Intermediate)
   - **Maya**: Age 6, Level 3 (Advanced)
-- Evaluators can toggle between children with **one click**. Context, stars, vocabulary, and active level switch immediately with **zero data bleed**.
+- Users can toggle between children with **one click**. Context, stars, vocabulary, and active level switch immediately with **zero data bleed**.
 
 ### 5. Performance Requirement: Sub-2.0s Latency SLA
 - **Measured Average Latency**: **~460ms** (Over 4x faster than the 2000ms threshold).
@@ -173,52 +171,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🎬 2-Minute English Video Presentation Script
-
-> **Time Budget**: Exactly 120 seconds  
-> **Presenter Tone**: Professional, confident, clear Senior Full-Stack AI Engineer
-
-```text
-[0:00 - 0:20] INTRODUCTION & PROBLEM STATEMENT
-"Hello Farzana, Mashrur, and the BRIMSEL evaluation team. I am excited to present Toby AI, 
-an AI-powered conversational English tutor designed specifically for children under 7 years old.
-Teaching young kids requires empathy, playfulness, and immediate feedback. Toby combines a 
-Progressive Learning System with Child Mode Detection and Social-Emotional Learning."
-
-[0:20 - 0:45] CORE INNOVATIONS: PROGRESSIVE LEARNING & MODE DETECTION
-"Our progressive curriculum scales from Level 1 phonics and single words for toddlers, to Level 2 
-phrases, up to Level 3 storytelling. Crucially, Toby does not act like a rigid quiz machine. 
-Our Child Mode Engine dynamically detects when a child is tired or frustrated, switching between 
-Learning, Casual Conversation, Playful Engagement, and Calming Support. If a child completes 
-three consecutive lessons, Toby automatically triggers a fun riddle to prevent cognitive fatigue."
-
-[0:45 - 1:10] SOCIAL-EMOTIONAL LEARNING (SEL) & MULTI-CHILD ISOLATION
-"We integrated CASEL-aligned SEL capabilities, praising resilience and growth mindset. When a child 
-makes an effort, Toby awards badges like 'Brave Explorer' with celebratory confetti. Furthermore, 
-our system natively supports Multi-Child Concurrency. With our one-click profile switcher, multiple 
-children—like Leo at Level 1 and Maya at Level 3—have their conversation memory, stars, and level 
-progression completely isolated without context bleed."
-
-[1:10 - 1:40] ARCHITECTURE DECISIONS, TRADE-OFFS & SUB-2S SLA
-"To strictly fulfill the sub-2.0-second latency SLA, we designed a single-pass inference pipeline 
-combining fast LLM streaming with Web Speech API audio synthesis. In our benchmarks, end-to-end 
-latency averages just 460 milliseconds—four times faster than the requirement. We also built an 
-in-memory LRU session cache and a 1.7-second watchdog with an instant local fallback engine, 
-ensuring zero downtime even during network hiccups."
-
-[1:40 - 2:00] CODE QUALITY, TESTING & DEPLOYMENT
-"The codebase features a clean modular monolith architecture with 100% Zod validation, Winston 
-logging, and a passing Vitest automated test suite. The live application is deployed and ready for 
-your hands-on evaluation. Thank you for your review, and I look forward to your feedback!"
-```
+## 👨‍💻 Author & Connect
+- **Author**: Mustafizur Rahman Sumon
+- **Role**: Full-Stack AI Engineer
+- **GitHub**: [@Sumon-DevCoder](https://github.com/Sumon-DevCoder)
 
 ---
 
-## 👥 GitHub Collaborators
-As requested in the assessment instructions, please ensure the following collaborators are invited:
-- `farzana@sharif.com`
-- `mashrur@sharif.com`
-
----
-
-*Built with ❤️ for BRIMSEL by Senior Full-Stack AI Engineer.*
+*Built with ❤️ by Mustafizur Rahman Sumon • AI-Powered Kids English Tutor (< 7 Years).*

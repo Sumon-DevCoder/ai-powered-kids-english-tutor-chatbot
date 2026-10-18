@@ -19,7 +19,7 @@
     "progressive-learning",
     "socketio"
   ],
-  "author": "Senior Full-Stack AI Engineer",
+  "author": "Mustafizur Rahman Sumon",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
