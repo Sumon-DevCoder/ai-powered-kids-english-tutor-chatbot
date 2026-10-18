@@ -32,11 +32,11 @@ export class LlmClient {
   ): Promise<AICompletionResult> {
     const startTime = Date.now();
 
-    // If Gemini API Key is configured, attempt fast Gemini 1.5/2.0 Flash completion with 1700ms watchdog
+    // If Gemini API Key is configured, attempt ultra-fast Gemini Flash Lite completion with 1850ms watchdog
     if (this.geminiClient && env.GEMINI_API_KEY) {
       try {
         const timeoutPromise = new Promise<never>((_, reject) =>
-          setTimeout(() => reject(new Error("LLM_TIMEOUT")), 1700)
+          setTimeout(() => reject(new Error("LLM_TIMEOUT")), 1850)
         );
 
         const geminiPromise = this.callGemini(request);
@@ -70,9 +70,9 @@ export class LlmClient {
     if (!this.geminiClient) throw new Error("Gemini client not initialized");
 
     const model = this.geminiClient.getGenerativeModel({
-      model: "gemini-1.5-flash",
+      model: "gemini-flash-lite-latest",
       generationConfig: {
-        maxOutputTokens: 60, // Short response for kids
+        maxOutputTokens: 45, // Short, energetic response for kids
         temperature: 0.7,
       },
     });

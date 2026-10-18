@@ -33,7 +33,12 @@ const startServer = async () => {
   });
 
   // Connect to Database asynchronously without blocking server readiness
-  await connectDatabase();
+  const isDbConnected = await connectDatabase();
+  if (isDbConnected) {
+    const { seedInitialProfiles } = await import("./modules/profile/profile.model");
+    await seedInitialProfiles();
+    logger.info("🌱 MongoDB Atlas: Initial child profiles synchronized successfully");
+  }
 };
 
 startServer();

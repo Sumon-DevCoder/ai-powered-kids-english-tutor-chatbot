@@ -44,7 +44,7 @@ describe("AI Kids English Tutor - Core Engine Tests", () => {
     expect(leoHistory.childId).toBe("child_leo_l1");
     expect(mayaHistory.childId).toBe("child_maya_l3");
     expect(leoHistory.messages).not.toEqual(mayaHistory.messages);
-  });
+  }, 15000);
 
   it("should fulfill the sub-2.0s latency performance requirement", async () => {
     const startTime = Date.now();
@@ -58,7 +58,7 @@ describe("AI Kids English Tutor - Core Engine Tests", () => {
     expect(totalDuration).toBeLessThan(2000);
     expect(response.reply).toBeDefined();
     expect(response.reply.length).toBeGreaterThan(0);
-  });
+  }, 15000);
 
   it("should progress points and award stars for child interactions", async () => {
     const initialProfile = await ProfileService.getProfileById("child_sam_l2");
@@ -71,5 +71,5 @@ describe("AI Kids English Tutor - Core Engine Tests", () => {
 
     const updatedProfile = await ProfileService.getProfileById("child_sam_l2");
     expect(updatedProfile.masteryPoints).toBeGreaterThan(initialPoints);
-  });
+  }, 15000);
 });

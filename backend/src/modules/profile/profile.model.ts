@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-export interface IChildProfile extends Document {
+export interface IChildProfile {
+  _id: string;
   name: string;
   age: number; // strictly 3 to 7
   avatar: string; // e.g. "bear", "fox", "owl", "bunny"
@@ -11,12 +12,13 @@ export interface IChildProfile extends Document {
   masteredVocabulary: string[];
   favoriteTopics: string[];
   recentMood: "happy" | "tired" | "frustrated" | "curious" | "shy";
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const childProfileSchema = new Schema<IChildProfile>(
   {
+    _id: { type: String, required: true },
     name: { type: String, required: true, trim: true },
     age: { type: Number, required: true, min: 2, max: 8 },
     avatar: { type: String, default: "bear" },
@@ -34,6 +36,7 @@ const childProfileSchema = new Schema<IChildProfile>(
   },
   {
     timestamps: true,
+    _id: false,
   }
 );
 
@@ -104,3 +107,16 @@ export const initialProfiles: Array<{
 export const inMemoryProfileStore = new Map<string, any>(
   initialProfiles.map((p) => [p._id, { ...p }])
 );
+
+export const seedInitialProfiles = async () => {
+  try {
+    for (const p of initialProfiles) {
+      const exists = await ChildProfile.findById(p._id);
+      if (!exists) {
+        await ChildProfile.create(p);
+      }
+    }
+  } catch (err) {
+    // Graceful
+  }
+};

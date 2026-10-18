@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { ChildProfile, inMemoryProfileStore, IChildProfile } from "./profile.model";
 import ApiError from "../../core/errors/ApiError";
 import { StatusCodes } from "http-status-codes";
@@ -6,9 +7,11 @@ import logger from "../../core/utils/logger";
 export class ProfileService {
   public static async getAllProfiles(): Promise<any[]> {
     try {
-      const dbProfiles = await ChildProfile.find().lean();
-      if (dbProfiles && dbProfiles.length > 0) {
-        return dbProfiles;
+      if (mongoose.connection.readyState === 1) {
+        const dbProfiles = await ChildProfile.find().lean();
+        if (dbProfiles && dbProfiles.length > 0) {
+          return dbProfiles;
+        }
       }
     } catch {
       // Graceful fallback to memory store
@@ -18,8 +21,10 @@ export class ProfileService {
 
   public static async getProfileById(childId: string): Promise<any> {
     try {
-      const dbProfile = await ChildProfile.findById(childId).lean();
-      if (dbProfile) return dbProfile;
+      if (mongoose.connection.readyState === 1) {
+        const dbProfile = await ChildProfile.findById(childId).lean();
+        if (dbProfile) return dbProfile;
+      }
     } catch {
       // Fallback
     }
@@ -92,16 +97,18 @@ export class ProfileService {
     inMemoryProfileStore.set(childId, { ...profile });
 
     // Persist to DB if connected
-    try {
-      await ChildProfile.findByIdAndUpdate(childId, {
-        currentLevel: profile.currentLevel,
-        masteryPoints: profile.masteryPoints,
-        starsEarned: profile.starsEarned,
-        masteredVocabulary: profile.masteredVocabulary,
-        recentMood: profile.recentMood,
-      });
-    } catch {
-      // In-memory update was already performed
+    if (mongoose.connection.readyState === 1) {
+      try {
+        await ChildProfile.findByIdAndUpdate(childId, {
+          currentLevel: profile.currentLevel,
+          masteryPoints: profile.masteryPoints,
+          starsEarned: profile.starsEarned,
+          masteredVocabulary: profile.masteredVocabulary,
+          recentMood: profile.recentMood,
+        });
+      } catch {
+        // In-memory update was already performed
+      }
     }
 
     return { profile, leveledUp, previousLevel };
