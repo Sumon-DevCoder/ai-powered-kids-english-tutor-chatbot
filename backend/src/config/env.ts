@@ -13,6 +13,7 @@ const envSchema = z.object({
   GEMINI_API_KEY: z.string().optional().default(""),
   OPENAI_API_KEY: z.string().optional().default(""),
   LOG_LEVEL: z.string().default("info"),
+  JWT_SECRET: z.string().default("toby_super_secret_jwt_key_2026_kids_ai"),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);

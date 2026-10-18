@@ -38,6 +38,13 @@ const startServer = async () => {
     const { seedInitialProfiles } = await import("./modules/profile/profile.model");
     await seedInitialProfiles();
     logger.info("🌱 MongoDB Atlas: Initial child profiles synchronized successfully");
+
+    const { seedDefaultParent } = await import("./modules/auth/user.model");
+    await seedDefaultParent();
+  } else {
+    // Seed in-memory stores even if DB is not connected
+    const { seedDefaultParent } = await import("./modules/auth/user.model");
+    await seedDefaultParent();
   }
 };
 

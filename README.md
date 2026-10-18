@@ -118,6 +118,15 @@ Aligned with early childhood CASEL competencies:
 - Single-pass zero-shot classification eliminates roundtrip delays.
 - A 1.7-second watchdog ensures the system never hangs if external networks fluctuate.
 
+### 6. Authentication & Security (Evaluator & Parent Portal)
+- **Zero-Friction Kid Access**: Toddlers under 7 playing on the root route (`/`) are **never** blocked by complex authentication gates.
+- **Protected Parent & Educator Dashboard**: Sensitive telemetry, multi-child learning analytics, and reset controls are protected under `/parent` with **JWT Bearer Token** authorization.
+- **Bcrypt Password Security**: Passwords hashed using Bcrypt (10 salt rounds).
+- **Evaluator Fast-Track Credentials**:
+  - **Demo Email**: `parent@toby.ai`
+  - **Demo Password**: `password123`
+  - **⚡ 1-Click Evaluator Login**: Available right on the `/parent` page to test authenticated flows with zero manual typing.
+
 ---
 
 ## 🚀 Local Setup & Running Instructions
@@ -130,7 +139,7 @@ Aligned with early childhood CASEL competencies:
 ```bash
 cd backend
 npm install
-npm test            # Runs Vitest automated test suite (6/6 tests passing)
+npm test            # Runs Vitest automated test suite (11/11 tests passing)
 npm run dev         # Starts backend API on http://localhost:5000
 ```
 
@@ -138,11 +147,14 @@ npm run dev         # Starts backend API on http://localhost:5000
 ```bash
 cd frontend
 npm install
-npm run build       # Validates production TypeScript bundle
+npm run build       # Validates production Next.js TypeScript bundle
 npm run dev         # Starts Next.js app on http://localhost:3000
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+- Toddler Tutor Chat: [http://localhost:3000](http://localhost:3000)
+- Parent Telemetry & Auth: [http://localhost:3000/parent](http://localhost:3000/parent) (Use `parent@toby.ai` / `password123` or click 1-Click Login)
+
 
 ---
 
